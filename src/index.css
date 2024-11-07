@@ -1,0 +1,95 @@
+/* General Layout */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: olive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  font-size: 36px;
+  color: #080808;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+h2 {
+  font-size: 24px;
+  color: #111111;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Button Styling */
+button {
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 15px 25px;
+  background-color: #6c5ce7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  margin: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button Hover with Subtle Scaling and Shadow */
+button:hover {
+  background-color: #5b4dbf;
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Ripple Effect */
+button::after {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(12, 12, 12, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.5s, opacity 1s;
+}
+
+button:active::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+}
+
+/* Answer Summary Styling */
+h3 {
+  color: #070707;
+  font-size: 20px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+  color: #0f0f0f;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
